@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 import socket
 from datetime import datetime
-from time import time
+import time
 import hashlib
 
 host_ip = '127.0.0.1'
@@ -21,13 +21,14 @@ def hash_file(filename):
 
     return hash.hexdigest()
 
-def main():
+def client_action():
     server = (host_ip, host_port) # Server tuple
     client = (client_ip, client_port) # Client tuple
     
     #Socket creation
     s = socket.socket( socket.AF_INET, socket.SOCK_DGRAM )
     s.bind( client )
+    # s.connect(server)
     
     print('UDP Client Started on {}:{}'.format(client_ip, client_port))
 
@@ -36,6 +37,7 @@ def main():
     log.write('UDP Client Log - ' + str(datetime.now())+'\n\n')
     message = 'Hello, ready.'
     print('Sending data to server: {}'.format(message))
+    time.sleep(0.1)
     s.sendto(message.encode(), server)
 
     name_size = s.recv(buffersize).decode()
@@ -47,7 +49,7 @@ def main():
 
     #File gets received
     print('Received File:',filename)
-    start = time()
+    start = time.time()
 
     with open('./media_client/' + filename,'wb') as f:
         while size > 0:
@@ -55,7 +57,7 @@ def main():
             f.write(data)
             size -= buffersize
 
-    end = time()
+    end = time.time()
     size = int(name_size[1])
     file_time = str(round(end-start,3))
     log.write('File: {}\n'.format(filename))
@@ -76,6 +78,9 @@ def main():
     #Close log and socket communication
     log.close()
     s.close()
+
+def main():
+    client_action()
     
 if __name__ == '__main__':
     main()
