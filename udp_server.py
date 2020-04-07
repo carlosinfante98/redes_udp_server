@@ -35,7 +35,7 @@ def main():
         print( '{} <- Recvfrom: {}'.format(current_time, addr))
         print( 'data: {}'.format(recvdata) )
         
-        filename= 'video2.MOV'
+        filename= 'big.mp4'
 
         with open('./media/'+filename,'rb') as f:
             size = os.path.getsize('./media/'+filename)
@@ -52,8 +52,10 @@ def main():
         s.sendto(file_hashed.encode(), addr)
         time.sleep(0.1)
         resp = s.recv(buffersize).decode()
-        if resp == 'hash_correct':
-            print("Client received hash correctly.")
+        if resp == 'correct':
+            print('File and hash correct.')
+        elif resp == 'error':
+            print('Error in file and hash')
     
     s.close()
     
