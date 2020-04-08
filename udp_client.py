@@ -28,12 +28,11 @@ def client_action():
     #Socket creation
     s = socket.socket( socket.AF_INET, socket.SOCK_DGRAM )
     s.bind( client )
-    # s.connect(server)
     
     print('UDP Client Started on {}:{}'.format(client_ip, client_port))
 
     #Connection starts here
-    log = open("./client_logs/udp_log ({}, {}).txt".format(client_ip, client_port), "w") #client log gets created here
+    log = open("./client_logs/udp_log {}.txt".format(s.getsockname()), "w") #client log gets created here
     log.write('UDP Client Log - ' + str(datetime.now())+'\n\n')
     message = 'Hello, ready.'
     print('Sending data to server: {}'.format(message))
