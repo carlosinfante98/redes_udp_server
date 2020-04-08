@@ -1,0 +1,7 @@
+UDP Client Log - 2020-04-08 14:19:28.191284
+
+File: small.mp4
+Packages sent: 41655 - Packages received: 41655 - Packages transmitted: 41655
+Bytes sent: 42654159 - Bytes received: 42654159
+Transaction time for file 'small.mp4' with size 42654159 bytes was: 2.504 seg
+
