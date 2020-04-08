@@ -1,0 +1,7 @@
+UDP Client Log - 2020-04-08 16:31:46.559167
+
+File: big.mp4
+Packages sent: 88094 - Packages received: 88094 - Packages transmitted: 88094
+Bytes sent: 90207446 - Bytes received: 90207446
+Transaction time for file 'big.mp4' with size 90207446 bytes was: 1.761 seg
+
