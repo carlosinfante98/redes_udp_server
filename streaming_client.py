@@ -70,9 +70,12 @@ if __name__ == '__main__':
 import socket
 import numpy as np
 import cv2 as cv
+import struct
 
-
-addr = ("127.0.0.1", 65534)
+group = "224.1.1.1"
+port = 3000
+addr = (group,port)
+#addr = ("127.0.0.1", 65534)
 buf = 512
 width = int(640*2)
 height = int(480*1.5)
@@ -81,7 +84,11 @@ num_of_chunks = width * height * 3 / buf
 
 if __name__ == '__main__':
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.bind(addr)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    s.bind(('', port))
+    #s.bind(addr)
+    mreq = struct.pack("4sl", socket.inet_aton(group), socket.INADDR_ANY)
+    s.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
     while True:
         chunks = []
         start = False

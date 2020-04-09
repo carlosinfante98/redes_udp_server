@@ -100,8 +100,8 @@ import socket
 import numpy as np
 import cv2 as cv
 
-
-addr = ("127.0.0.1", 65534)
+addr = ("224.1.1.1",3000)
+#addr = ("127.0.0.1", 65534)
 buf = 512
 width = 640
 height = 480
@@ -112,6 +112,8 @@ code = ('start' + (buf - len(code)) * 'a').encode('utf-8')
 
 if __name__ == '__main__':
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.setsockopt(socket.IPPROTO_IP,socket.IP_MULTICAST_TTL,1)
+    #s.bind(addrG)
     while(cap.isOpened()):
         ret, frame = cap.read()
         if ret:
