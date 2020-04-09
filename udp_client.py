@@ -24,11 +24,11 @@ def hash_file(filename):
 def client_action():
     server = (host_ip, host_port) # Server tuple
     client = (client_ip, client_port) # Client tuple
-    
+
     #Socket creation
     s = socket.socket( socket.AF_INET, socket.SOCK_DGRAM )
     s.bind( client )
-    
+
     print('UDP Client Started on {}:{}'.format(client_ip, client_port))
 
     #Connection starts here
@@ -73,13 +73,13 @@ def client_action():
     else:
         s.sendto('error'.encode(), server)
         print('Wrong hash.')
-    
+
     #Close log and socket communication
     log.close()
     s.close()
 
 def main():
     client_action()
-    
+
 if __name__ == '__main__':
     main()
