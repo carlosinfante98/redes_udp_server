@@ -106,8 +106,6 @@ buf = 512
 width = 640
 height = 480
 cap = cv.VideoCapture('./media/small.mp4')
-#cap.set(3, width)
-#cap.set(4, height)
 code = 'start'
 code = ('start' + (buf - len(code)) * 'a').encode('utf-8')
 

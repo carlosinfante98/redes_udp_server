@@ -74,7 +74,7 @@ import cv2 as cv
 
 addr = ("127.0.0.1", 65534)
 buf = 512
-width = int(640*1.5)
+width = int(640*2)
 height = int(480*1.5)
 code = b'start'
 num_of_chunks = width * height * 3 / buf
