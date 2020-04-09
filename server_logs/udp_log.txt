@@ -14,3 +14,27 @@ Bytes sent: 90207446 - Bytes received: 90207446
 Transaction time for file 'big.mp4' with size 90207446 bytes was: 1.803 seg
 
 -------------------------------------------------------
+UDP Client ('127.0.0.1', 57348) Log - 2020-04-08 20:50:36.249371
+
+File: big.mp4
+Packages sent: 88094 - Packages received: 88094 - Packages transmitted: 88094
+Bytes sent: 90207446 - Bytes received: 90207446
+Transaction time for file 'big.mp4' with size 90207446 bytes was: 1.258 seg
+
+-------------------------------------------------------
+UDP Client ('127.0.0.1', 55177) Log - 2020-04-08 20:50:49.008617
+
+File: big.mp4
+Packages sent: 88094 - Packages received: 88094 - Packages transmitted: 88094
+Bytes sent: 90207446 - Bytes received: 90207446
+Transaction time for file 'big.mp4' with size 90207446 bytes was: 1.802 seg
+
+-------------------------------------------------------
+UDP Client ('127.0.0.1', 57348) Log - 2020-04-08 20:50:33.146221
+
+File: big.mp4
+Packages sent: 88094 - Packages received: 88094 - Packages transmitted: 88094
+Bytes sent: 90207446 - Bytes received: 90207446
+Transaction time for file 'big.mp4' with size 90207446 bytes was: 2.401 seg
+
+-------------------------------------------------------

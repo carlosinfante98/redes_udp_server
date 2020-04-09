@@ -23,7 +23,6 @@ username = user[0]
 password = user[1]
 if (username,password) in allowed_users:
     sock.sendto("authenticated, you can now upload videos".encode(),(MCAST_GRP1, MCAST_PORT_recieve))
-
 else:
     sock.sendto("not a valid user".encode(), (MCAST_GRP1, MCAST_PORT_recieve))
         #terminar

@@ -4,7 +4,7 @@ import socket
 import struct
 
 
-MCAST_GRP = '239.1.1.234'
+MCAST_GRP = '224.3.0.0'
 MCAST_PORT = 7234
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
